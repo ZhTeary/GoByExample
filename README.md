@@ -26,6 +26,28 @@
     添加元素append
 
     go 1.21以后可以用slices包
+5. values in map
+
+    ```
+   if _,prs := m["key"]; prs{ 
+        return true 
+   }else{
+        return false
+   }
+    ```
+   
+6. 闭包Closure
+   
+   闭包在返回函数的同时还记录了上下文环境（把里面的变量封闭在了闭包里面）
+
+   > "The returned function closes over the variable i to form a closure." ---GoByExample
+   
+   封闭了的包，把外层函数里面的变量环境也存储在了二层函数里面，并且将用到的变量封闭在里面
+   。
+   
+   //Todo
+   闭包是返回了二层函数，所以一层函数的作用就是提供变量的生命周期？
+   
 
 
 # Log
@@ -33,3 +55,5 @@
 2023-09-04 : src/abcd , harvest 1,2
 
 2023-09-06 : src/efghi , harvest 3,4
+
+2023-09-07 : src/jklmno , harvest  5,6 , TODO: closure
