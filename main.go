@@ -1,10 +1,34 @@
 package main
 
-import "gbe/src"
+import "gbe/src/function"
 
 func main() {
+	//w- generics
+	function.W()
+
+	//v- struct embedding
+	//function.V()
+
+	//u_ interface
+	//function.U()
+
+	//t_ method
+	//function.T()
+
+	//s_ struct
+	//function.S()
+
+	//r_string rune
+	//function.R()
+
+	//q pointer
+	//function.Q()
+
+	//p recurision
+	//function.P()
+
 	// O- Closures
-	src.O()
+	//function.O()
 
 	//nextInt := src.O()
 	//fmt.Println(nextInt())

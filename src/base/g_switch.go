@@ -1,4 +1,4 @@
-package src
+package base
 
 import (
 	"fmt"
@@ -35,7 +35,7 @@ func G() {
 		fmt.Println("It`s after noon ")
 	}
 
-	//switch in func
+	//switch in function
 	whatAmI := func(i interface{}) {
 		switch t := i.(type) {
 		case bool:
