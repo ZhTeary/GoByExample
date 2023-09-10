@@ -13,12 +13,17 @@
     
     import **"Mod/Package"**
 
+
 2. e
 
    以**10**为底, 并不是以e为底 5e3 = 5000
+
+
 3. switch
 
     对于多种条件的判断更为灵活
+
+
 4. slice
 
     make([]type,num) 使用make声明且最好预先分配内存
@@ -26,6 +31,8 @@
     添加元素append
 
     go 1.21以后可以用slices包
+
+
 5. values in map
 
     ```
@@ -36,6 +43,7 @@
    }
     ```
    
+
 6. 闭包Closure
    
    闭包在返回函数的同时还记录了上下文环境（把里面的变量封闭在了闭包里面）
@@ -48,6 +56,7 @@
    //Todo
    闭包是返回了二层函数，所以一层函数的作用就是提供变量的生命周期？
 
+
 7. strings
 
     Go string 是只读的bytes数组的切片, `srting == []byte` 
@@ -56,20 +65,31 @@
 
    > https://go.dev/blog/strings
 
+
 8. methods
    
    Go supports **methods defined on struct types.**
    
    也就是说方法只能在自定义的type上
+
+
+9. Select
    
+   _select_ lets you **wait on multiple channel operations.**
+
+
+10. Timeouts
+   > _Timeouts_ are important for programs that connect to external resources or that
+   otherwisse need to bound execution time. Implementing timeouts in Go is easy and elegant
+   thanks to _channels_ and _select_
 
 
 # Log
+| 日期         | 内容                                                                                                              | 收获           | TODO            |
+|------------|-----------------------------------------------------------------------------------------------------------------|--------------|-----------------|
+| 2023-09-04 | "helloworld, Values, Variables, Constants"                                                                      | harvest 1,2  |                 |
+| 2023-09-06 | "For, If/Else, Switch, Arrays, Slices"                                                                          | harvest 3,4  |                 |
+| 2023-09-07 | "Maps, Range, Functions, Multiple Return Values, Variadic Functions"                                            | harvest 5,6  | Closure         |
+| 2023-09-09 | "Closure, Recursion, Pointers, Strings and Runes, Structs, Methods, Interfaces, Struct Embedding,Generics"      | harvest 7,8  | Strings & Runes |                                                                   
+| 2023-09-10 | "Errors, Goroutines, Channels, Channel Buffering, ChannelSynchronization, Channel Directions, Select, Timeouts" | harvest 9,10 | Timeouts        |
 
-2023-09-04 : src/abcd , harvest 1,2
-
-2023-09-06 : src/efghi , harvest 3,4
-
-2023-09-07 : src/jklmno , harvest  5,6 , TODO: closure
-
-2023-09-09 : src/pqrstuvw, harvest 7,8 

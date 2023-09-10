@@ -1,10 +1,30 @@
 package main
 
-import "gbe/src/function"
+import "gbe/src/concurrent"
 
 func main() {
+	//Channel Select
+	concurrent.Select()
+
+	//Channel Directions
+	//concurrent.ChannelDir()
+
+	//ChannelBuffering
+	//concurrent.ChannelBuffering()
+
+	//z- channels
+	//concurrent.Z()
+
+	//y- goroutines
+	//concurrent.Y()
+
+	//-----------------------------------
+
+	//x- errors
+	//function.X()
+
 	//w- generics
-	function.W()
+	//function.W()
 
 	//v- struct embedding
 	//function.V()
