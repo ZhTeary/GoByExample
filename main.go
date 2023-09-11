@@ -3,8 +3,17 @@ package main
 import "gbe/src/concurrent"
 
 func main() {
+	//Close Channel
+	concurrent.CloseChannel()
+
+	//Non-blocking Channel Operation
+	//concurrent.NonblockingChannelOperation()
+
+	//Timeouts
+	//concurrent.Timeouts()
+
 	//Channel Select
-	concurrent.Select()
+	//concurrent.Select()
 
 	//Channel Directions
 	//concurrent.ChannelDir()

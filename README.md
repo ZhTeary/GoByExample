@@ -76,7 +76,10 @@
 9. Select
    
    _select_ lets you **wait on multiple channel operations.**
+   
+   select 语句只能用于通道操作，每个 case 必须是一个通道操作，要么是发送要么是接收。
 
+   select 语句会监听所有指定的通道上的操作，一旦其中一个通道准备好就会执行相应的代码块。
 
 10. Timeouts
    > _Timeouts_ are important for programs that connect to external resources or that
@@ -84,12 +87,28 @@
    thanks to _channels_ and _select_
 
 
-# Log
-| 日期         | 内容                                                                                                              | 收获           | TODO            |
-|------------|-----------------------------------------------------------------------------------------------------------------|--------------|-----------------|
-| 2023-09-04 | "helloworld, Values, Variables, Constants"                                                                      | harvest 1,2  |                 |
-| 2023-09-06 | "For, If/Else, Switch, Arrays, Slices"                                                                          | harvest 3,4  |                 |
-| 2023-09-07 | "Maps, Range, Functions, Multiple Return Values, Variadic Functions"                                            | harvest 5,6  | Closure         |
-| 2023-09-09 | "Closure, Recursion, Pointers, Strings and Runes, Structs, Methods, Interfaces, Struct Embedding,Generics"      | harvest 7,8  | Strings & Runes |                                                                   
-| 2023-09-10 | "Errors, Goroutines, Channels, Channel Buffering, ChannelSynchronization, Channel Directions, Select, Timeouts" | harvest 9,10 | Timeouts        |
+11. Non-Blocking Channel Operations
 
+   > Basic sends and receives on channels are blocking. 
+   > However, we can use **_select_** with a _**default**_ clause to implement 
+   > non-blocking sends, receives, and even non-blocking multi-way _**selects**_.
+
+12. 无缓冲通道
+
+   无缓冲通道指在获取数据之前没有能力保存数据的通道，这种类型的通道要求亮哥Goroutine同时处于执行状态才能完成写入和获取
+
+   如果两个Goroutine没有同时准备，某一个Goroutine执行写入或获取操作将会处于阻塞等待状态，另一个Goroutine无法执行写入或获取操作，
+   _程序将会提示异常，这种类型的通道执行写入和获取的交互行为是同步，任意一个操作都无法离开另一个操作单独存在_
+
+   当我们使用无缓冲通道的时候，必须注意通道变量的操作，
+   确保程序中有两个或两个以上的Goroutine同时执行通道的读写操作，读写操作必须是一读一写，不能只读不写或只写不读
+
+# Log
+| 日期         | 内容                                                                                                              | 收获           | Key                |
+|------------|-----------------------------------------------------------------------------------------------------------------|--------------|--------------------|
+| 2023-09-04 | "helloworld, Values, Variables, Constants"                                                                      | harvest 1,2  |                    |
+| 2023-09-06 | "For, If/Else, Switch, Arrays, Slices"                                                                          | harvest 3,4  |                    |
+| 2023-09-07 | "Maps, Range, Functions, Multiple Return Values, Variadic Functions"                                            | harvest 5,6  | Closure            |
+| 2023-09-09 | "Closure, Recursion, Pointers, Strings and Runes, Structs, Methods, Interfaces, Struct Embedding,Generics"      | harvest 7,8  | Strings & Runes    |                                                                   
+| 2023-09-10 | "Errors, Goroutines, Channels, Channel Buffering, ChannelSynchronization, Channel Directions, Select, Timeouts" | harvest 9,10 | Timeouts           |
+|2023-09-11 | "Timeouts, Non-blocking channel operation, Close channel, channel sychronization"                               | harvest 11,12 | unbuffered channel | 
