@@ -3,8 +3,27 @@ package main
 import "gbe/src/concurrent"
 
 func main() {
+	//mutex
+	concurrent.Mutexes()
+
+	//Atomic Counters
+	//concurrent.AtomicCounter()
+
+	//concurrent.RateLimiting()
+
+	//concurrent.WG()
+
+	//concurrent.WorkerPool()
+
+	//concurrent.Iticker()
+
+	//concurrent.Itimer()
+
+	//Range over channel
+	//concurrent.RangeChan()
+
 	//Close Channel
-	concurrent.CloseChannel()
+	//concurrent.CloseChannel()
 
 	//Non-blocking Channel Operation
 	//concurrent.NonblockingChannelOperation()

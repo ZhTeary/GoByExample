@@ -103,6 +103,56 @@
    当我们使用无缓冲通道的时候，必须注意通道变量的操作，
    确保程序中有两个或两个以上的Goroutine同时执行通道的读写操作，读写操作必须是一读一写，不能只读不写或只写不读
 
+13. go 闭包在循环中
+
+```go
+func main() {
+    done := make(chan bool)
+
+    values := []string{"a", "b", "c"}
+    for _, v := range values {
+        go func() {
+            fmt.Println(v)
+            done <- true
+        }()
+    }
+
+    // wait for all goroutines to complete before exiting
+    for _ = range values {
+        <-done
+    }
+}
+```
+期望输出：`a, b, c`
+实际有可能的输出：`c, c, c`
+
+这是因为循环的每次迭代都用相同的实例变量v，所以每个闭包共享相同的变量。
+当闭包运行时，在`fmt.Println`语句执行时输出变量v，
+但是v有可能在goroutine启动时被修改。 想要检测这种问题可以用`go vet`
+
+为了绑定每个闭包在启动时的变量v，我们最有可能在循环内为每次迭代新建一个变量，
+其其中一种办法时将变量作为参数传进闭包：
+```go
+for _,v :=range values {
+    go func(u string) {
+        fmt.Println(u)
+        done <- true
+    }(v)
+}
+```
+
+另一种更简单的办法是用声明的方式创建一个变量，有可能看起来奇怪但是有用：
+```go
+for _,v := range values {
+    v:=v //create a new 'v'
+    go func() {
+        fmt.Println(v)
+        done <- true
+    }()
+}
+```
+
+
 # Log
 | 日期         | 内容                                                                                                              | 收获           | Key                |
 |------------|-----------------------------------------------------------------------------------------------------------------|--------------|--------------------|
@@ -112,3 +162,5 @@
 | 2023-09-09 | "Closure, Recursion, Pointers, Strings and Runes, Structs, Methods, Interfaces, Struct Embedding,Generics"      | harvest 7,8  | Strings & Runes    |                                                                   
 | 2023-09-10 | "Errors, Goroutines, Channels, Channel Buffering, ChannelSynchronization, Channel Directions, Select, Timeouts" | harvest 9,10 | Timeouts           |
 |2023-09-11 | "Timeouts, Non-blocking channel operation, Close channel, channel sychronization"                               | harvest 11,12 | unbuffered channel | 
+|2023-09-15 | “Range chan, timers, rickers worker pools, waitGroups”| harvest 13 | waitGroups |
+|2023-09-27 | "rateLimiting, atomicCounter, mutesxes"| | |
