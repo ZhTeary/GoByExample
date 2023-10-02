@@ -1,10 +1,22 @@
 package main
 
-import "gbe/src/concurrent"
+import "gbe/src/builtin"
 
 func main() {
+
+	/*builtin sort*/
+
+	//builtin.Isort()
+	//builtin.SortbyFunc()
+	//builtin.Ipanic()
+	//builtin.IDefer()
+	builtin.IRecover()
+
+	//stateful goroutines
+	//concurrent.StatefuleGoroutines()
+
 	//mutex
-	concurrent.Mutexes()
+	//concurrent.Mutexes()
 
 	//Atomic Counters
 	//concurrent.AtomicCounter()

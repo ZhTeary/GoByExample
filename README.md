@@ -59,7 +59,7 @@
 
 7. strings
 
-    Go string 是只读的bytes数组的切片, `srting == []byte` 
+    Go string 是只读的bytes数组的切片, `string == []byte`
 
    In other languages, strings are made of “characters”. In Go, the concept of a character is called a rune - it’s an integer that represents a Unicode code point.
 
@@ -152,6 +152,16 @@ for _,v := range values {
 }
 ```
 
+15. defer
+
+defer 用于确保函数调用再程序执行的一会儿后调用，通常用于清除的场景。
+
+16. recover
+
+go通过 `recover`内置函数可以让程序从panic中恢复，停止panic并执行defer闭包
+
+`**recover` 必须在defer函数中调用，**当发生panic时，defer会激活并且recover调用会捕捉panic，此时程序会将defer执行完后再结束
+
 
 # Log
 | 日期         | 内容                                                                                                              | 收获           | Key                |
@@ -163,4 +173,5 @@ for _,v := range values {
 | 2023-09-10 | "Errors, Goroutines, Channels, Channel Buffering, ChannelSynchronization, Channel Directions, Select, Timeouts" | harvest 9,10 | Timeouts           |
 |2023-09-11 | "Timeouts, Non-blocking channel operation, Close channel, channel sychronization"                               | harvest 11,12 | unbuffered channel | 
 |2023-09-15 | “Range chan, timers, rickers worker pools, waitGroups”| harvest 13 | waitGroups |
-|2023-09-27 | "rateLimiting, atomicCounter, mutesxes"| | |
+|2023-09-27 | "rateLimiting, atomicCounter, mutexes"| | |
+|2023-10-02 | "stateful goroutines,sort,sore by functions, panic, defer, recover"| | stateful goroutines|
