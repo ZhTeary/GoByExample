@@ -164,14 +164,16 @@ go通过 `recover`内置函数可以让程序从panic中恢复，停止panic并�
 
 
 # Log
-| 日期         | 内容                                                                                                              | 收获           | Key                |
-|------------|-----------------------------------------------------------------------------------------------------------------|--------------|--------------------|
-| 2023-09-04 | "helloworld, Values, Variables, Constants"                                                                      | harvest 1,2  |                    |
-| 2023-09-06 | "For, If/Else, Switch, Arrays, Slices"                                                                          | harvest 3,4  |                    |
-| 2023-09-07 | "Maps, Range, Functions, Multiple Return Values, Variadic Functions"                                            | harvest 5,6  | Closure            |
-| 2023-09-09 | "Closure, Recursion, Pointers, Strings and Runes, Structs, Methods, Interfaces, Struct Embedding,Generics"      | harvest 7,8  | Strings & Runes    |                                                                   
-| 2023-09-10 | "Errors, Goroutines, Channels, Channel Buffering, ChannelSynchronization, Channel Directions, Select, Timeouts" | harvest 9,10 | Timeouts           |
-|2023-09-11 | "Timeouts, Non-blocking channel operation, Close channel, channel sychronization"                               | harvest 11,12 | unbuffered channel | 
-|2023-09-15 | “Range chan, timers, rickers worker pools, waitGroups”| harvest 13 | waitGroups |
-|2023-09-27 | "rateLimiting, atomicCounter, mutexes"| | |
-|2023-10-02 | "stateful goroutines,sort,sore by functions, panic, defer, recover"| | stateful goroutines|
+| 日期         | 内容                                                                                                                                                                                    | 收获           | Key                 |
+|------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|---------------------|
+| 2023-09-04 | "helloworld, Values, Variables, Constants"                                                                                                                                            | harvest 1,2  |                     |
+| 2023-09-06 | "For, If/Else, Switch, Arrays, Slices"                                                                                                                                                | harvest 3,4  |                     |
+| 2023-09-07 | "Maps, Range, Functions, Multiple Return Values, Variadic Functions"                                                                                                                  | harvest 5,6  | Closure             |
+| 2023-09-09 | "Closure, Recursion, Pointers, Strings and Runes, Structs, Methods, Interfaces, Struct Embedding,Generics"                                                                            | harvest 7,8  | Strings & Runes     |                                                                   
+| 2023-09-10 | "Errors, Goroutines, Channels, Channel Buffering, ChannelSynchronization, Channel Directions, Select, Timeouts"                                                                       | harvest 9,10 | Timeouts            |
+|2023-09-11 | "Timeouts, Non-blocking channel operation, Close channel, channel sychronization"                                                                                                     | harvest 11,12 | unbuffered channel  | 
+|2023-09-15 | “Range chan, timers, rickers worker pools, waitGroups”                                                                                                                                | harvest 13 | waitGroups          |
+|2023-09-27 | "rateLimiting, atomicCounter, mutexes"                                                                                                                                                | |                     |
+|2023-10-02 | "stateful goroutines,sort,sore by functions, panic, defer, recover"                                                                                                                   | | stateful goroutines |
+|2023-10-17 | "String Functions","String Formatting","Text Templates","Regular Expressions","JSON","XML","Time","Epoch","Time Formatting / Parsing","Random Numbers","Number Parsing","Url parsing" | | Url parsing         |
+

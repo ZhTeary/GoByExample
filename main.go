@@ -10,9 +10,17 @@ func main() {
 	//builtin.SortbyFunc()
 	//builtin.Ipanic()
 	//builtin.IDefer()
-	builtin.IRecover()
+	//builtin.IRecover()
+	//builtin.Strfmt()
+	//builtin.TextTemplate()
+	//builtin.RegularExp()
+	//builtin.IJSON()
+	//builtin.ITime()
+	//builtin.Random()
+	builtin.Parsing()
 
 	//stateful goroutines
+
 	//concurrent.StatefuleGoroutines()
 
 	//mutex
