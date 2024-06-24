@@ -1,3 +1,6 @@
+- Test Commit GPG Sign
+    - git commit -S -m "< message >"
+
 - About this project
     
     Go by Example is a hands-on introduction to Go using annotated example programs
